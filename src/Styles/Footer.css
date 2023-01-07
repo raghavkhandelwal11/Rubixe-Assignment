@@ -1,0 +1,20 @@
+.footer {
+    background-color: rgb(211, 215, 219);
+    padding: 30px 10%;
+
+}
+
+
+.footer-flex {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    color: rgb(82, 50, 6);
+    font-size: 14px;
+}
+
+
+.footer-flex > div {
+    width: 20%;
+}
+

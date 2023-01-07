@@ -1,0 +1,92 @@
+/* .features-main {
+    padding: 20px 15%;
+} */
+
+.features-box {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+
+.first {
+    padding: 10px 18%;
+    background-color: rgb(164, 29, 164);
+    color: white;
+}
+
+.second {
+    padding: 10px 18%;
+    background-color: rgb(211, 215, 219);
+    padding-bottom: 50px;
+}
+
+
+.feature-card-flexbox {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.up-card {
+    width: 19%;
+    background-image: linear-gradient(to top, 
+    rgb(211, 215, 219) 0 15%,
+    white 45% 100%
+    );
+    height: 200px;
+    border: 0px solid black;
+    border-radius: 20px;
+    border-top: 35px solid blue;
+    margin: 3px;
+    box-shadow: 5px -15px 10px rgb(142, 140, 140);
+}
+
+
+
+.down-card {
+    width: 19%;
+    background-image: linear-gradient(to bottom, 
+    rgb(211, 215, 219) 0 15%,
+    white 45% 100%
+    );
+    height: 200px;
+    border: 0px solid black;
+    /* border-width: 0px 1px 1px 1px; */
+    border-radius: 20px;
+    border-bottom: 35px solid maroon;
+    margin: 3px;
+    box-shadow: 5px 15px 10px rgb(142, 140, 140);
+}
+
+
+.card-number-u {
+    position: relative;
+    bottom: 50px;
+    left: 42%;
+    width: 22px;
+    height: 22px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: rgb(231, 224, 224);
+    color: blue;
+    font-weight: 800;
+    padding: 6px;
+}
+
+
+.card-number-d {
+    position: relative;
+    top: 30px;
+    left: 39%;
+    width: 22px;
+    height: 22px;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-color: rgb(231, 224, 224);
+    color: blue;
+    font-weight: 800;
+    padding: 6px;
+}
+

@@ -1,0 +1,33 @@
+.about-us-main {
+    padding: 20px 15%;
+    padding-bottom: 80px;
+}
+
+.about-us-flexbox {
+    display: flex;
+    flex-direction: row;
+
+}
+
+
+.about-us-flexitem-1 {
+    width: 60%;
+    padding: 10px 5%;
+}
+
+
+.about-us-flexitem-2 {
+    text-align: center;
+    width: 40%;
+}
+
+.about-us-gif {
+    width: 90% ;
+}
+
+hr {
+    border-width: 2px ;
+    border-style: solid;
+    border-color: red;
+    width: 60%;
+}

@@ -1,0 +1,45 @@
+.navbar-main {
+    position: fixed;
+    width: 100%;
+    padding: 10px 2%;
+    background-color: black;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+
+.navbar-logo {
+    width: 200px;
+}
+
+.navbar-items {
+    margin-right: 4%;
+    position: relative;
+    top: 20px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.navbar-items > div {
+    margin: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0px;
+}
+
+button {
+    font: inherit;
+    text-decoration: none; 
+    color: white; 
+    border: none;
+    background-color: inherit;
+    font-size: 0.9rem;
+}
+
+button:hover {
+    color:cadetblue ;
+}
