@@ -1,0 +1,80 @@
+[
+    {
+        "country": "India",
+        "states": [
+            {
+                "state": "Rajasthan",
+                "cities": ["Bikaner", "Jaipur", "Jaisalmer", "Kota"]
+            },
+
+            {
+                "state": "Maharashtra",
+                "cities": ["Mumbai", "Pune", "Nagpur"]
+            },
+
+            {
+                "state": "Madhya Pradesh",
+                "cities": ["Bhopal", "Indore", "Ujjain"]
+            },
+            
+            {
+                "state": "Delhi",
+                "cities": ["Delhi"]
+            },
+
+            {
+                "state": "Punjab",
+                "cities": ["Mohali", "Amritsar", "Bhatinda"]
+            }
+
+        ]
+
+    },
+
+    {
+        "country": "USA",
+        "states": [
+            {
+                "state": "Arizona",
+                "cities": ["Alexander City", "Andalusia", "Anniston", "Athens"]
+            },
+
+            
+            {
+                "state": "Alabama",
+                "cities": ["Clifton",
+                    "Douglas",
+                    "Flagstaff",
+                    "Florence",
+                    "Gila Bend",
+                    "Glendale",
+                    "Globe",
+                    "Kingman"]
+            },
+
+
+            {
+                "state": "California",
+                "cities": ["Garden Grove",
+                    "Glendale",
+                    "Hayward",
+                    "Hollywood",
+                    "Huntington Beach"
+                    ]
+            },
+
+            {
+                "state": "Georgia",
+                "cities": ["Macon",
+                    "Marietta",
+                    "Milledgeville",
+                    "Plains",
+                    "Rome",
+                    "Savannah",
+                    "Toccoa"]
+            }
+            
+        ]
+
+    }
+]

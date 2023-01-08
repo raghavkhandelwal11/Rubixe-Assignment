@@ -3,6 +3,7 @@ import "./Login.css";
 import Footer from "../Home/Footer";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import places from "../../Resources/Places.json";
 
 
 const Form=()=>{
@@ -11,11 +12,13 @@ const Form=()=>{
     const fname = useRef();
     const profilePic = useRef();
     const country = useRef();
+    const state = useRef();
+    const city = useRef();
     const password = useRef();
     const password2 = useRef();
 
-
-
+    const [states, updateStates] = useState([]);
+    const [cities, updateCities] = useState([]);
 
 
     const registerUser = async () => {
@@ -26,7 +29,9 @@ const Form=()=>{
                 name: fname.current.value,
                 img_url: profilePic.current.value,
                 password: password.current.value,
-                country: country.current.value
+                country: country.current.value,
+                state: state.current.value,
+                city: city.current.value
             }).then((res) => {
                 console.log(res.data);
                 if(res.data == "Registered Successfully"){
@@ -42,6 +47,31 @@ const Form=()=>{
         }
 
     }
+
+
+    const setStates = (e) => {
+        if(e.target.value != "") {
+
+            let c = e.target.value;
+            for(let i=0; i< places.length; i++) {
+                if(places[i].country == c) {
+                    updateStates(places[i].states);
+                }
+            }
+        }
+    }
+
+    const setCities = (e) => {
+        if(e.target.value != "") {
+            let c = e.target.value;
+            for(let i=0; i<states.length; i++) {
+                if(c == states[i].state) {
+                    updateCities(states[i].cities);
+                }
+            }
+        }
+    }
+
 
 
         return(
@@ -72,26 +102,60 @@ const Form=()=>{
                                     <input style={{border: "none"}} className="" type="text" ref={profilePic} placeholder="your profile pic url" name="img_url" required/>
                                     
                                 </div>
+                                
+
+
+
                                 <div className="input_text">
-                                    <select style={{border: "none"}} name="" id="" ref={country}>
-                                        <option value="">Country</option>
+
+                                    <select name="" id="" ref={country} onChange={(e) => setStates(e)}>
+                                        <option value="">Choose Your Country</option>
                                         <option value="India">India</option>
                                         <option value="USA">USA</option>
-                                        <option value="France">France</option>
-                                        <option value="Autralia">Autralia</option>
-                                        <option value="China">China</option>
-                                        <option value="Russia">Russia</option>
                                     </select>
-                                    
+                                
                                 </div>
+
+
+                                <div className="input_text">
+
+                                    <select  name="" id="" ref={state} onChange={(e) => setCities(e)}>
+                                        <option value="">Choose Your State</option>
+                                        {states.map((s) => {
+                                            return <option value={s.state}>{s.state}</option>
+                                        })}
+                                    </select>
+
+                                </div>
+  
+
+                                <div className="input_text">
+
+                                    <select  name="" id="" ref={city}>
+                                        <option value="">Choose Your City</option>
+                                        {cities.map((c) => {
+                                            return <option value={c}>{c}</option>
+                                        })}
+                                    </select>
+
+                                </div>
+
+
+
+
+
+
+
                                 <div className="input_text">
                                     <input style={{border: "none"}} className= "" type="password" ref={password} placeholder="Enter Password" name="password" required/>
                                     
                                 </div>
+
                                 <div className="input_text">
                                     <input style={{border: "none"}} className="" type="password" ref={password2} placeholder="re-enter Password" name="password" required/>
                                 
                                 </div>
+
                                 <div style={{width: "100%"}} className="btn">
                                     <button  style={{fontSize: "1rem", fontWeight: "700"}} onClick={registerUser}>Sign Up</button>
                                 </div>

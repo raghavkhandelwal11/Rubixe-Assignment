@@ -26,11 +26,22 @@ const Form=( props )=>{
             })
             .then((res) =>{
                 const str = JSON.stringify(res.data);
-                if(str != "Incorrect Email or Password" && str != "error occured"){
-                    console.log(res.data);
-                    props.setData(res.data);
-                    localStorage.setItem("jwt", res.data.jwt);
-                    navigate("/")
+                if(str != "Incorrect Email or Password" && str != "error occured" && str != "invalid token" && str != "token expired"){
+
+                    if(res.data.email == "adminalpha101@rubixe.com"){
+                        localStorage.setItem('jwt', res.data.jwt);
+                        props.setData(res.data);
+                        navigate("/adminpage");
+                        return;
+                    } else {
+                        console.log(res.data);
+                        props.setData(res.data);
+                        localStorage.setItem("jwt", res.data.jwt);
+                        navigate("/");
+                        return;
+                    }
+
+                    
                 } else {
                     alert(JSON.stringify(res.data));
                 }

@@ -4,12 +4,12 @@ import { useEffect, useState } from 'react';
 import axios from "axios";
 import { Link } from 'react-router-dom';
 import $ from "jquery";
-
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = (props) => {
   const [toggler, setToggler] = useState(true);
   const [userData, updateUserData] = useState({});
-
+  const navigate = useNavigate();
 
   
 
@@ -40,9 +40,10 @@ const Navbar = (props) => {
 
   const logout = () => {
     props.setUser({});
-    localStorage.setItem("jwt", undefined);
+    localStorage.removeItem("jwt")
     alert("User Logged Out");
     setToggler(true);
+    navigate('/');
     return;
   }
 

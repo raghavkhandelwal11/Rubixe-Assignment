@@ -10,12 +10,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 120vh;
+    min-height: 130vh;
     background-color: #818ee2
 }
 
 .container .card {
-    height: 500px;
+    height: 550px;
     width: 800px;
     background-color: #fff;
     position: relative;
