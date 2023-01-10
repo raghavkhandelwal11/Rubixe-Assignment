@@ -1,6 +1,7 @@
 import React, {useEffect, useState, useRef} from 'react';
 import axios from 'axios';
-import "../../Styles/AdminPage.css"
+import "../../Styles/AdminPage.css";
+import $ from "jquery";
 
 
 const AdminPage = () => {
@@ -28,6 +29,21 @@ const AdminPage = () => {
         } catch(e) {
             console.error(e);
         }
+
+        $(function() {
+            $('#download-pdf-btn').click(function() {
+                var element = document.getElementById("user-table");
+                var printWindow = window.open('', '', 'height=400,width=800');
+                printWindow.document.write('<html><head><title>Print</title>');
+                printWindow.document.write('</head><body >');
+                printWindow.document.write(element.outerHTML);
+                printWindow.document.write('</body></html>');
+                printWindow.document.close();
+                printWindow.print();
+
+            })
+        });
+
     }, []);
 
 
@@ -126,6 +142,9 @@ const AdminPage = () => {
 
 
         <br /><br /><br />
+
+        <button id="download-pdf-btn" style={{color: "blue"}}>Download PDF</button>
+        <br /> <br />
 
         <table id="user-table" border="1px">
             <thead>
